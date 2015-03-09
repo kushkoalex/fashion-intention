@@ -1,0 +1,15 @@
+.header{
+    height: 27px;
+    background-color: #000000;
+    position: relative;
+}
+
+.header .logo{
+    width: 358px;
+    height: 48px;
+    position: absolute;
+    background: url(../images/logo.png);
+    left: 50%;
+    margin-left: -179px;
+    z-index: 1000;
+}
