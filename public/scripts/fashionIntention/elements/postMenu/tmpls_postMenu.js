@@ -13,24 +13,23 @@
         return {c:'month',C:{e:'a',h:'#',t:month}}
     };
 
-    tmpls.postMenu = function (data) {
+    tmpls.postMenuWrapper = function(){
+        return {c:'post-menu-wrapper',C: [
+            {c: 'post-menu-link', t: 'все посты', n:'toggleLink'},
+            {
+                c: 'post-menu', C: [
+                {c: 'post-menu-triangle'},
+                {c: 'close-button', n:'closeButton'},
+                {c: 'inc-top'},
+                {c: 'all-posts', t: 'все посты'},
+                {c: 'content', n: 'menuContent'},
+                {c: 'inc-bottom'}
+            ]
+            }]};
+    };
 
-
-
-        return {
-            c: 'post-menu-wrapper', C: [
-                {c: 'post-menu-link', t: 'все посты'},
-                {
-                    c: 'post-menu', C: [
-                    {c: 'post-menu-triangle'},
-                    {c: 'close-button'},
-                    {c: 'inc-top'},
-                    {c: 'all-posts', t: 'все посты'},
-                    {c: 'content', n: data.n},
-                    {c: 'inc-bottom'}
-                ]
-                }]
-        };
+    tmpls.postMenu = function () {
+        return {c:'post-menu-wrapper', n:'postMenuWrapper'};
     };
 
 }(FIN));

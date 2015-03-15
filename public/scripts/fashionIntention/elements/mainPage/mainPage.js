@@ -7,10 +7,9 @@ FIN.mainPage = function ($parent) {
         settings = fin.settings,
         posts = settings.dataModels.posts,
         $fragment,
-        $postMenuContainer,
+        $postMenuWrapper,
+        $mainPage,
         build,
-        
-
 
 
         u;
@@ -18,18 +17,12 @@ FIN.mainPage = function ($parent) {
 
     //$fragment = global.document.createDocumentFragment();
 
-    build = tp('mainPage', posts, $parent);
+    build = tp('mainPage');
+    $postMenuWrapper = build.postMenuWrapper;
+    $mainPage = build.r;
 
-    $postMenuContainer = build.postMenuContent;
+    fin.postMenu($postMenuWrapper);
 
-
-
-    fin.postMenu($postMenuContainer);
-
-    //var $mainPageWrapper = tp('mainPageWrapper', $parent).r;
-
-     //$mainPageWrapper.appendChild($fragment);
-
-    //console.log()
+    $parent.appendChild($mainPage);
 
 };

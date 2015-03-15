@@ -5,12 +5,12 @@
         u;
 
 
-    tmpls.mainPage = function (posts) {
+    tmpls.mainPage = function () {
         return [
             tmpls.header(),
 
             {c:'main-image-content'},
-            tmpls.postMenu({posts:posts, n:'postMenuContent'}),
+            tmpls.postMenu(),
 
             tmpls.footer()
         ];
