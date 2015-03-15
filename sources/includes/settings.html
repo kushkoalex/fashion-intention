@@ -1,0 +1,34 @@
+<script type="text/javascript">
+    (function(fin){
+        var settings;
+        if (fin.settings === null){
+            fin.settings = settings = {};
+        } else{
+            settings = fin.settings;
+        }
+
+        if (!('controlsDescriptors' in settings)){
+            settings.controlsDescriptors = {};
+        }
+
+        if (!('dataModels' in settings)){
+            settings.dataModels = {};
+        }
+
+//        settings.hiddenToken = '6e5db10da6b6fcae366bdf4e4ce50f1b';
+//        settings.hiddenTokenAPIURL = '/api/user/';
+//        settings.hiddenTokenDestructAPIURL = '/api/user/';
+//
+//        settings.dataPaths = {
+//            mfo: '/data/ukrainianMFO.json',
+//            countryCode: '/data/countryCode.json'
+//        }
+
+    }(FIN));
+</script>
+
+include "../includes/settings/l10n.html"
+include "../includes/settings/controlsDescriptors.html"
+include "../includes/settings/dataModels/mainMenu.html"
+include "../includes/settings/dataModels/post.html"
+include "../includes/settings/dataModels/posts.html"

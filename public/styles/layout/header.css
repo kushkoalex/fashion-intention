@@ -1,0 +1,81 @@
+.header {
+    height: 27px;
+    background-color: #000000;
+    position: relative;
+}
+
+.header .logo {
+    width: 358px;
+    height: 48px;
+    position: absolute;
+    background: url(../../images/logo.png);
+    left: 50%;
+    margin-left: -179px;
+    z-index: 1000;
+}
+
+.subscribe,
+.feedback
+{
+    text-transform: uppercase;
+    font-size: 10px;
+    color: #ffffff;
+    letter-spacing: 1px;
+    position: absolute;
+    left: 50%;
+    top: 5px;
+    border-bottom: 1px dashed #ffffff;
+    text-decoration: none;
+}
+.subscribe {
+    margin-left: -520px;
+}
+
+.feedback{
+    margin-left: 480px;
+}
+
+.social{
+    position: absolute;
+    left: 50%;
+}
+
+.social.fb{
+    width: 18px;
+    height: 19px;
+    background: url(../../images/social-fb.png);
+    margin-left: -335px;
+    top: 4px;
+}
+.social.twitter{
+    width: 12px;
+    height: 17px;
+    background: url(../../images/social-twitter.png);
+    margin-left: -280px;
+    top: 5px;
+}
+.social.pin{
+    width: 18px;
+    height: 23px;
+    background: url(../../images/social-pin.png);
+    margin-left: -235px;
+    top: 5px;
+}
+
+.search{
+    position: absolute;
+    left: 50%;
+    margin-left: 250px;
+    width: 150px;
+    margin-top: 1px;
+    height: 24px;
+    color: #acacac;
+    font-family: Georgia,serif;
+    font-style: italic;
+    font-size: 10px;
+    padding-left: 10px;
+    background: #ffffff url(../../images/search-arrow.png) no-repeat 125px 6px;
+
+    padding-right: 23px;
+
+}

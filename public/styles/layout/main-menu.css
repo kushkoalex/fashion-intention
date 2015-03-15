@@ -1,0 +1,57 @@
+.main-menu{
+    position: relative;
+    text-align: center;
+    font-size: 11px;
+    margin: 10px auto 0;
+}
+
+.main-menu li{
+    display: inline-block;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin: 0 40px;
+    list-style: none;
+    vertical-align: top;
+    height: 46px;
+}
+
+.main-menu li a,
+.main-menu li span{
+    height: 46px;
+    padding-left: 60px;
+    text-align: left;
+}
+
+.main-menu a,
+.main-menu span
+{
+    display: block;
+    color: inherit;
+}
+
+.main-menu .one-line a,
+.main-menu .one-line span{
+    padding-top: 14px;
+}
+
+.main-menu .two-lines a,
+.main-menu .two-lines span{
+    padding-top: 7px;
+}
+
+.main-menu .author{
+     background: url(../../images/menu-item-author.png) no-repeat;
+}
+
+.main-menu .category{
+     background: url(../../images/menu-item-category.png) no-repeat;
+}
+.main-menu .media{
+     background: url(../../images/menu-item-media.png) no-repeat;
+}
+.main-menu .press{
+     background: url(../../images/menu-item-press.png) no-repeat;
+}
+.main-menu .travel{
+     background: url(../../images/menu-item-travel.png) no-repeat;
+}

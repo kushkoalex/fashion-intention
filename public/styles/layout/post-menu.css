@@ -1,0 +1,123 @@
+.post-menu-wrapper {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+
+.post-menu-link {
+    width: 70px;
+    background: url(../../images/menu.png) no-repeat;
+    font-size: 10px;
+    text-transform: uppercase;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    padding-top: 53px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.post-menu {
+    width: 180px;
+    min-height: 600px;
+    background-color: #ffffff;
+    position: absolute;
+    top: 0;
+    left: -195px;
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 10002;
+    text-align: center;
+}
+
+.post-menu-triangle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: 10px solid transparent;
+    top: 15px;
+    border-left-color: #ffffff;
+    right: -20px;
+}
+
+.post-menu .close-button {
+    width: 19px;
+    height: 19px;
+    background: url(../../images/menu-close-button.png);
+    cursor: pointer;
+    margin: 5px;
+}
+
+.post-menu .inc-top {
+    width: 27px;
+    height: 27px;
+    background: url(../../images/inc-top.png);
+    position: relative;
+    margin: -10px auto 0;
+
+}
+
+.post-menu .all-posts {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 1px solid #c1c1c1;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #858585;
+    font-size: 15px;
+    margin: 25px auto 23px;
+    position: relative;
+    width: 90px;
+    text-align: center;
+}
+
+.post-menu .inc-bottom {
+    width: 105px;
+    height: 27px;
+    background: url(../../images/inc-bottom.png);
+    position: relative;
+    margin: 30px auto 30px;
+}
+
+.post-menu .content{
+    font-family: 'Georgia', serif;
+    font-size: 14px;
+}
+
+.post-menu .content .year
+{
+    font-size: 20px;
+    color: #636363;
+    margin: 10px auto 10px;
+    font-weight: bold;
+    width: 50px;
+    position: relative;
+    background: url(../../images/menu-underline-dot.png) repeat-x left bottom;
+    padding-bottom: 5px;
+}
+
+.post-menu .content .selected
+{
+    color: #bbbbbb;
+    background: none;
+}
+
+.post-menu .content .months
+{
+    font-style: italic;
+    font-weight: 400;
+    font-size: 14px;
+    color: #636363;
+    position: relative;
+    padding-bottom: 10px;
+}
+.post-menu .content .months a{
+    color: inherit;
+
+
+}
+.post-menu .content .month{
+    margin-bottom: 10px;
+}
+

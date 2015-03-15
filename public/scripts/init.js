@@ -1,17 +1,17 @@
 A9.ready(function (a9, global) {
-    var nv = global.NV,
-        settings = nv.settings,
+    var fin = global.FIN,
+        settings = fin.settings,
         $body = global.document.body,
         tp = global.cnCt.tp,
         $ = a9.$,
-        $footer = $('footer'),
+        //$footer = $('footer'),
         $mainPage = $('mainPage'),
-        $events = $('events'),
-        $eventDetails = $('eventDetails'),
-        $media = $('media'),
-        $partnership = $('partnership'),
-        $news = $('news'),
-        $contacts = $('contacts'),
+        //$events = $('events'),
+        //$eventDetails = $('eventDetails'),
+        //$media = $('media'),
+        //$partnership = $('partnership'),
+        //$news = $('news'),
+        //$contacts = $('contacts'),
 
     //domNodesQuery = a9.$cs('showDetails'),
     //$showDetails = domNodesQuery.showDetails,
@@ -19,37 +19,37 @@ A9.ready(function (a9, global) {
         u;
 
 
-    global.cnCt.bindTemplates(nv.tmpls);
+    global.cnCt.bindTemplates(fin.tmpls);
 
     if ($mainPage !== null) {
-        nv.mainPage($mainPage);
+        fin.mainPage($mainPage);
     }
 
-    if ($events !== null) {
-        nv.events($events);
-    }
+    //if ($events !== null) {
+    //    nv.events($events);
+    //}
+    //
+    //if ($eventDetails !== null) {
+    //    nv.eventDetails($eventDetails);
+    //}
+    //
+    //if ($media !== null) {
+    //    nv.media($media);
+    //}
+    //
+    //if ($partnership !== null) {
+    //    nv.partnership($partnership);
+    //}
+    //
+    //if ($news !== null) {
+    //    nv.news($news);
+    //}
+    //
+    //if ($contacts !== null) {
+    //    nv.contacts($contacts);
+    //}
 
-    if ($eventDetails !== null) {
-        nv.eventDetails($eventDetails);
-    }
-
-    if ($media !== null) {
-        nv.media($media);
-    }
-
-    if ($partnership !== null) {
-        nv.partnership($partnership);
-    }
-
-    if ($news !== null) {
-        nv.news($news);
-    }
-
-    if ($contacts !== null) {
-        nv.contacts($contacts);
-    }
-
-    if ($footer !== null) {
-        tp('footer', $footer);
-    }
+    //if ($footer !== null) {
+    //    tp('footer', $footer);
+    //}
 });

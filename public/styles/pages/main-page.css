@@ -1,0 +1,26 @@
+.main-image-content-container{
+    height: 435px;
+    position: relative;
+}
+
+.main-image-content{
+    height: 435px;
+    position: relative;
+    background: url(../images/content/204817.jpg);
+    background-size: cover;
+}
+
+.main-menu-container{
+    height: 67px;
+    background-color: rgba(0,0,0,.5);
+    position: absolute;
+    width: 100%;
+    /*z-index: 1000;*/
+    bottom: 0;
+}
+
+.main-content-container{
+    position: relative;
+}
+
+
