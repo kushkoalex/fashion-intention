@@ -20,7 +20,7 @@
 
 .post-menu {
     width: 180px;
-    min-height: 600px;
+    /*min-height: 600px;*/
     background-color: #ffffff;
     position: absolute;
     top: 0;
