@@ -5,7 +5,27 @@
         u;
 
 
-    tmpls.mainPage = function () {
+    tmpls.mainPage = function (posts) {
+
+        var content = [],
+            direction = '';
+
+        for (var i = 0; i < posts.length; i++) {
+            if (i % 2 == 0) {
+                if (direction == 'left') {
+                    direction = 'right'
+                } else {
+                    direction = 'left';
+                }
+            }
+
+            posts[i].direction = direction;
+            content.push(tmpls.postPreviewWrapper(posts[i]));
+        }
+
+        content.push(tmpls.clear());
+
+
         return [
             tmpls.header(),
             {
@@ -17,11 +37,7 @@
             },
             {
                 c: 'main-content-container', C: [
-                tmpls.postPreviewWrapper({direction: 'left'}),
-                tmpls.postPreviewWrapper({direction: 'left'}),
-                tmpls.postPreviewWrapper({direction: 'right'}),
-                tmpls.postPreviewWrapper({direction: 'right'}),
-                tmpls.clear()
+                content
             ]
             },
 
@@ -33,16 +49,26 @@
         return {c: 'preview-image', C: {c: 'post-preview-triangle'}};
     };
 
-    tmpls.postPreviewInfo = function () {
+    tmpls.postPreviewInfo = function (postData) {
+
+        var tags = [];
+
+        for (var i = 0; i < postData.tags.length; i++) {
+            tags.push(tmpls.tag( {title: postData.tags[i], url: ''}));
+
+
+        }
+
+
         return {
             c: 'info', C: [
                 {
                     c: 'info-content', C: [
-                    {c: 'date', t: '16.11.2015'},
-                    {c: 'title', C: {e: 'a', h: '', t: 'Пять привычек, за которые не стыдно'}},
+                    {c: 'date', t: postData.date},
+                    {c: 'title', C: {e: 'a', h: '', t: postData.title}},
                     {
                         c: 'description',
-                        t: 'Приоткрываем завесу борьбы с нежеланием рано просыпаться приоткрываем завесу борьбы с нежеланием рано просыпаться приоткрываем завесу борьбы с нежеланием рано просыпаться приоткрываем завесу борьбы с нежеланием рано просыпаться просыпаться приоткрываем завесу борьбы с нежеланием рано просыпаться просыпаться приоткрываем завесу борьбы с нежеланием рано просыпаться'
+                        t: postData.description
                     }
                 ]
                 },
@@ -50,19 +76,7 @@
                     c: 'tags-wrapper', C: [
                     {c: 'separator'},
                     {
-                        c: 'tags', C: [
-                        tmpls.tag({title: 'love', url: ''}),
-                        tmpls.tag({title: 'hello', url: ''}),
-                        tmpls.tag({title: 'world', url: ''}),
-                        tmpls.tag({title: 'love', url: ''}),
-                        tmpls.tag({title: 'hello', url: ''}),
-                        tmpls.tag({title: 'world', url: ''}),
-                        tmpls.tag({title: 'the dress is white or blue?', url: ''}),
-                        tmpls.tag({title: 'hello', url: ''}),
-                        tmpls.tag({title: 'world', url: ''}),
-                        tmpls.tag({title: 'world', url: ''}),
-                        tmpls.tag({title: 'world', url: ''}),
-                        tmpls.tag({title: 'world', url: ''})
+                        c: 'tags', C: [tags
                     ]
                     }
                 ]
@@ -73,14 +87,14 @@
 
 
     tmpls.postPreviewWrapper = function (postData) {
-        var wrapperCssClass = 'post-preview-wrapper '+ postData.direction,
+        var wrapperCssClass = 'post-preview-wrapper ' + postData.direction,
             content = [];
 
         if (postData.direction == 'left') {
             content.push(tmpls.postPreviewImage());
-            content.push(tmpls.postPreviewInfo());
+            content.push(tmpls.postPreviewInfo(postData));
         } else {
-            content.push(tmpls.postPreviewInfo());
+            content.push(tmpls.postPreviewInfo(postData));
             content.push(tmpls.postPreviewImage());
         }
 

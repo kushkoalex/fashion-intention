@@ -17,7 +17,7 @@ FIN.mainPage = function ($parent) {
 
     //$fragment = global.document.createDocumentFragment();
 
-    build = tp('mainPage');
+    build = tp('mainPage',posts);
     $postMenuWrapper = build.postMenuWrapper;
     $mainPage = build.r;
 

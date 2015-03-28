@@ -21,33 +21,107 @@ FIN.postMenu = function ($object) {
         buildYear,
         $year,
         $years = [],
-        months = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+        years = [],
+        year,
+        months = [],
+        monthsLocalization = [
+            {id:'01',title:'Январь'},
+            {id:'02',title:'Февраль'},
+            {id:'03',title:'Март'},
+            {id:'04',title:'Апрель'},
+            {id:'05',title:'Май'},
+            {id:'06',title:'Июнь'},
+            {id:'07',title:'Июль'},
+            {id:'08',title:'Август'},
+            {id:'09',title:'Сентябрь'},
+            {id:'10',title:'Октябрь'},
+            {id:'11',title:'Ноябрь'},
+            {id:'12',title:'Декабрь'}
+            ],
         contentBuild,
+        calendar = [],
         u;
 
     $fragment = global.document.createDocumentFragment();
     $contentFragment = global.document.createDocumentFragment();
 
-    for (var i = 2013; i < 2016; i++) {
 
-        buildYear = tp('postYear', {year: i}, $contentFragment);
+    a9.each(posts, function (post) {
 
+        var date = post.date,
+            yearStr = date.substr(6, 4),
+            monthStr = date.substr(3, 2),
+            months,
+            u;
+
+        var hasYear = false;
+        var hasMonth = false;
+
+        for (var i = 0; i < calendar.length; i++) {
+            if (!hasYear && calendar[i].year == yearStr) {
+                hasYear = true;
+                months = calendar[i].months;
+
+                for (var j = 0; j < months.length; j++) {
+                    if (months[j] == monthStr) {
+                        hasMonth = true;
+                    }
+                }
+
+                if (!hasMonth) {
+                    months.push(monthStr);
+                }
+
+            }
+        }
+
+        if (!hasYear) {
+            months = [];
+            months.push(monthStr);
+            calendar.push({year: yearStr, months: months});
+        }
+    });
+
+
+
+    a9.each(calendar,function(item){
+        item.months.sort(compareMonths);
+    });
+
+    calendar.sort(compareYears);
+
+    //console.log(calendar);
+
+    function compareYears(a, b) {
+        if (a.year > b.year) return 1;
+        if (a.year < b.year) return -1;
+    }
+
+    function compareMonths(a, b){
+        if (a > b) return 1;
+        if (a < b) return -1;
+    }
+
+    function getMonthTitle(index){
+        for(var i = 0; i< monthsLocalization.length; i++){
+           if(monthsLocalization[i].id==index){
+               return monthsLocalization[i].title;
+           }
+        }
+    }
+
+    for (var i = 0; i < calendar.length; i++) {
+        year = calendar[i];
+        buildYear = tp('postYear', {year: year.year}, $contentFragment);
         $monthsWrapper = buildYear.monthsWrapper;
         $year = buildYear.r;
         $years.push($year);
-
         $monthFragment = global.document.createDocumentFragment();
-
-        for (var j = 0; j < 12; j++) {
-            tp('postMonth', {title: months[j], index: j, year: i}, $monthFragment);
+        for (var j = 0; j < year.months.length; j++) {
+            tp('postMonth', {title:getMonthTitle( year.months[j]), index: months[j], year: year.year}, $monthFragment);
         }
-
         $monthsWrapper.appendChild($monthFragment);
-
         a9.addEvent($year, eventOnPointerEnd, onYearClick);
-
-        //yearBuild.r.appendChild($monthsWrapper);
-
     }
 
     build = tp('postMenuWrapper', $fragment);
@@ -110,7 +184,7 @@ FIN.postMenu = function ($object) {
     function unselectAllYears() {
         a9.each($years, function ($year) {
             a9.removeClass($year, 'selected');
-            var $months = a9.$c('months',$year)[0];
+            var $months = a9.$c('months', $year)[0];
             if ($months) {
                 if (!a9.hasClass($months, 'hidden')) {
                     a9.addClass($months, 'hidden');
