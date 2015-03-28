@@ -32,6 +32,11 @@
     text-align: center;
 }
 
+.post-menu.hidden
+{
+    display: none;
+}
+
 .post-menu-triangle {
     position: absolute;
     width: 10px;
@@ -87,6 +92,10 @@
 
 .post-menu .content .year
 {
+
+}
+
+.post-menu .content .year .title{
     font-size: 20px;
     color: #636363;
     margin: 10px auto 10px;
@@ -95,9 +104,19 @@
     position: relative;
     background: url(../../images/menu-underline-dot.png) repeat-x left bottom;
     padding-bottom: 5px;
+    cursor: pointer;
 }
 
-.post-menu .content .selected
+
+
+
+/*.post-menu .content .selected*/
+/*{*/
+    /*color: #bbbbbb;*/
+    /*background: none;*/
+/*}*/
+
+.post-menu .content .year.selected .title
 {
     color: #bbbbbb;
     background: none;
@@ -110,8 +129,13 @@
     font-size: 14px;
     color: #636363;
     position: relative;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
 }
+.months.hidden{
+
+    display: none;
+}
+
 .post-menu .content .months a{
     color: inherit;
 
