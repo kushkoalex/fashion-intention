@@ -93,13 +93,13 @@ FIN.postMenu = function ($object) {
     //console.log(calendar);
 
     function compareYears(a, b) {
-        if (a.year > b.year) return 1;
-        if (a.year < b.year) return -1;
+        if (a.year < b.year) return 1;
+        if (a.year > b.year) return -1;
     }
 
     function compareMonths(a, b){
-        if (a > b) return 1;
-        if (a < b) return -1;
+        if (a < b) return 1;
+        if (a > b) return -1;
     }
 
     function getMonthTitle(index){
