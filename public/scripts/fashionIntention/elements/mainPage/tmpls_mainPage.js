@@ -55,7 +55,8 @@
 
     tmpls.postPreviewInfo = function (postData) {
 
-        var tags = [];
+        var postDetailsUrl = fin.settings.controlsDescriptors.site.postDetailsUrl,
+            tags = [];
 
         for (var i = 0; i < postData.tags.length; i++) {
             tags.push(tmpls.tag({title: postData.tags[i], url: ''}));
@@ -69,7 +70,7 @@
                 {
                     c: 'info-content', C: [
                     {c: 'date', t: postData.date},
-                    {c: 'title', C: {e: 'a', h: '', t: postData.title}},
+                    {c: 'title', C: {e: 'a', h: a9.supplant(postDetailsUrl,{id:postData.id}) , t: postData.title}},
                     {
                         c: 'description',
                         t: postData.description

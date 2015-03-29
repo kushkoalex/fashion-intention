@@ -118,7 +118,7 @@ FIN.postMenu = function ($object) {
         $years.push($year);
         $monthFragment = global.document.createDocumentFragment();
         for (var j = 0; j < year.months.length; j++) {
-            tp('postMonth', {title:getMonthTitle( year.months[j]), index: months[j], year: year.year}, $monthFragment);
+            tp('postMonth', {title:getMonthTitle( year.months[j]), month: year.months[j], year: year.year}, $monthFragment);
         }
         $monthsWrapper.appendChild($monthFragment);
         a9.addEvent($year, eventOnPointerEnd, onYearClick);

@@ -14,8 +14,10 @@
         }
     };
 
-    tmpls.postMonth = function (month) {
-        return {c: 'month', C: {e: 'a', h: 'posts/' + month.year + '/' + (month.index + 1), t: month.title}}
+    tmpls.postMonth = function (date) {
+        var postsUrl = fin.settings.controlsDescriptors.site.postsUrl;
+
+        return {c: 'month', C: {e: 'a', h: a9.supplant(postsUrl,{year:date.year, month:date.month}), t: date.title}}
     };
 
     tmpls.postMenuWrapper = function () {
