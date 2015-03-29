@@ -232,7 +232,7 @@
                 partnershipPageUrl: 'partnership.html',
                 contactsPageUrl: 'contacts.html',
                 postDetailsUrl: 'post/{id}',
-                postsUrl: 'post/{year}/{month}'
+                postsUrl: 'posts/{year}/{month}'
             };
 
         }(FIN, A9));
@@ -3452,6 +3452,30 @@
                         "anim"
                     ],
                     "imageSrc": "image9.jpg"
+                }
+            ]
+
+        }(FIN, A9));
+    </script>
+
+
+    <script type="text/javascript">
+        (function (fin, a9) {
+            var settings = fin.settings,
+                    dataModels = settings.dataModels;
+
+            dataModels.calendar = [
+                {
+                    year: 2015,
+                    months: [1,2,3]
+                },
+                {
+                    year: 2014,
+                    months: [1,12]
+                },
+                {
+                    year: 2013,
+                    months: [11,12]
                 }
             ]
 

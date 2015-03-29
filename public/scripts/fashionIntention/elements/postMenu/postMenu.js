@@ -5,7 +5,6 @@ FIN.postMenu = function ($object) {
         eventOnPointerEnd = a9.deviceInfo.eventOnPointerEnd,
         tp = global.cnCt.tp,
         settings = fin.settings,
-        posts = settings.dataModels.posts,
         $body = document.body,
         $fragment,
         $contentFragment,
@@ -21,76 +20,21 @@ FIN.postMenu = function ($object) {
         buildYear,
         $year,
         $years = [],
-        years = [],
+        currentMonth,
         year,
         months = [],
-        monthsLocalization = [
-            {id:'01',title:'Январь'},
-            {id:'02',title:'Февраль'},
-            {id:'03',title:'Март'},
-            {id:'04',title:'Апрель'},
-            {id:'05',title:'Май'},
-            {id:'06',title:'Июнь'},
-            {id:'07',title:'Июль'},
-            {id:'08',title:'Август'},
-            {id:'09',title:'Сентябрь'},
-            {id:'10',title:'Октябрь'},
-            {id:'11',title:'Ноябрь'},
-            {id:'12',title:'Декабрь'}
-            ],
-        contentBuild,
-        calendar = [],
+        monthsLocalization = ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь', 'Ноябрь', 'Декабрь'],
+        calendar = settings.dataModels.calendar,
         u;
 
     $fragment = global.document.createDocumentFragment();
     $contentFragment = global.document.createDocumentFragment();
-
-
-    a9.each(posts, function (post) {
-
-        var date = post.date,
-            yearStr = date.substr(6, 4),
-            monthStr = date.substr(3, 2),
-            months,
-            u;
-
-        var hasYear = false;
-        var hasMonth = false;
-
-        for (var i = 0; i < calendar.length; i++) {
-            if (!hasYear && calendar[i].year == yearStr) {
-                hasYear = true;
-                months = calendar[i].months;
-
-                for (var j = 0; j < months.length; j++) {
-                    if (months[j] == monthStr) {
-                        hasMonth = true;
-                    }
-                }
-
-                if (!hasMonth) {
-                    months.push(monthStr);
-                }
-
-            }
-        }
-
-        if (!hasYear) {
-            months = [];
-            months.push(monthStr);
-            calendar.push({year: yearStr, months: months});
-        }
-    });
-
-
 
     a9.each(calendar,function(item){
         item.months.sort(compareMonths);
     });
 
     calendar.sort(compareYears);
-
-    //console.log(calendar);
 
     function compareYears(a, b) {
         if (a.year < b.year) return 1;
@@ -102,14 +46,6 @@ FIN.postMenu = function ($object) {
         if (a > b) return -1;
     }
 
-    function getMonthTitle(index){
-        for(var i = 0; i< monthsLocalization.length; i++){
-           if(monthsLocalization[i].id==index){
-               return monthsLocalization[i].title;
-           }
-        }
-    }
-
     for (var i = 0; i < calendar.length; i++) {
         year = calendar[i];
         buildYear = tp('postYear', {year: year.year}, $contentFragment);
@@ -117,8 +53,10 @@ FIN.postMenu = function ($object) {
         $year = buildYear.r;
         $years.push($year);
         $monthFragment = global.document.createDocumentFragment();
+
         for (var j = 0; j < year.months.length; j++) {
-            tp('postMonth', {title:getMonthTitle( year.months[j]), month: year.months[j], year: year.year}, $monthFragment);
+            currentMonth = year.months[j]-1;
+            tp('postMonth', {title: monthsLocalization[currentMonth] , month: currentMonth+1, year: year.year}, $monthFragment);
         }
         $monthsWrapper.appendChild($monthFragment);
         a9.addEvent($year, eventOnPointerEnd, onYearClick);
@@ -131,13 +69,7 @@ FIN.postMenu = function ($object) {
     $closeButton = build.closeButton;
     $postMenu = build.postMenuContainer;
 
-
-    //console.log($link);
-
     $menuContent.appendChild($contentFragment);
-
-
-    //var $postMenuWrapper = tp('postMenuWrapper').r;
 
     function toggleMenu(e) {
         if (a9.hasClass($postMenu, postMenuHiddenCssClass)) {
@@ -145,15 +77,11 @@ FIN.postMenu = function ($object) {
         } else {
             a9.addClass($postMenu, postMenuHiddenCssClass);
         }
-        //e.preventDefault();
         if (e.stopPropagation) {
             e.stopPropagation();
         } else {
             e.cancelBubble = true;
         }
-
-        //return false;
-        //e.cancelBubble();
     }
 
     function closeMenu() {
