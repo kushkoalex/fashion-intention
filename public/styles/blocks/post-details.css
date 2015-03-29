@@ -1,0 +1,73 @@
+.post-details {
+    margin-top: 65px;
+    text-align: center;
+}
+
+.post-details .title {
+    min-width: 777px;
+    max-width: 1200px;
+    border: 1px solid #cccccc;
+    padding: 10px;
+    position: relative;
+    margin: 0 auto;
+    display: inline-block;
+    /*line-height: 30px;*/
+}
+
+.post-details .title .date {
+    background-color: #f5f5f5;
+    position: absolute;
+    left: 50%;
+    margin-left: -30px;
+    top: -13px;
+    padding: 0 10px;
+    color: #cccccc;
+}
+
+.post-details .title .title-text {
+    text-align: center;
+    font-size: 23px;
+}
+
+.post-items {
+    padding-top: 10px;
+    width: 1160px;
+
+    position: relative;
+    margin: 0 auto;
+
+}
+
+.post-item {
+    margin-top: 50px;
+    border: 1px solid #cccccc;
+}
+
+.post-item .image{
+    width: 556px;
+    float: right;
+
+}
+
+.post-item .text-wrapper{
+    background-color: #ffffff;
+    margin-right: 606px;
+}
+
+.post-item .text-wrapper .pattern{
+    width: 29px;
+    height: 7px;
+    background: url("../../images/text-block-pattern.png") no-repeat 0 60px;
+    margin: 0 auto;
+    position: relative;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.post-item .text-wrapper .text{
+
+    padding-left: 90px;
+    padding-right: 60px;
+    text-align: left;
+    text-transform: none;
+}

@@ -25,7 +25,6 @@
 
         content.push(tmpls.clear());
 
-
         return [
             tmpls.header(),
             {
@@ -40,7 +39,6 @@
                 content
             ]
             },
-
             tmpls.footer()
         ];
     };
