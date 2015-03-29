@@ -17,15 +17,22 @@
                     {
                         c: 'text-wrapper', C: [
                         {c: 'pattern'},
-                        {c: 'text',H:postItem.text},
+                        {c: 'text', H: postItem.text},
                         {c: 'pattern'}
                     ]
                     },
 
-                    {c:'clear'}
+                    {c: 'clear'}
                 ]
             });
         });
+
+
+        var tags = [];
+
+        for (var i = 0; i < post.tags.length; i++) {
+            tags.push(tmpls.tag({title: post.tags[i], url: ''}));
+        }
 
         return [
             tmpls.header(),
@@ -47,6 +54,16 @@
                     },
                     {
                         c: 'post-items', C: postItems
+                    },
+                    {
+                        c: 'tags-container',
+                        C: {
+                            c: 'tags-wrapper', C: [
+                                {c: 'tags-title', t: 'Тэги:'},
+                                {c: 'tags', C: tags},
+                                {c:'clear'}
+                            ]
+                        }
                     }
                 ]
             }
