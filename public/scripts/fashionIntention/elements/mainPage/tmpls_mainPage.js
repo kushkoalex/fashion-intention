@@ -26,7 +26,7 @@
         content.push(tmpls.clear());
 
         return [
-            tmpls.header(),
+            tmpls.header(true),
             {
                 c: 'main-image-content-container', C: [
                 {c: 'main-image-content'},

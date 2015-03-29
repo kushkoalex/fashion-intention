@@ -12,6 +12,7 @@
     left: 50%;
     margin-left: -179px;
     z-index: 1000;
+    display: block;
 }
 
 .subscribe,
