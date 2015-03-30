@@ -20,7 +20,8 @@
                     ]
                     },
 
-                    {c: 'clear'}
+                    {c: 'clear'},
+                    {c:'pattern'}
                 ]
             });
         });
