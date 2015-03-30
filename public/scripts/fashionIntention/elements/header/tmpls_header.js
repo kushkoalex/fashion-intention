@@ -15,7 +15,7 @@
 
         return {
             c: 'header', n: 'header', C: [
-                tmpls.subscribeControl(),
+                //tmpls.subscribeControl(),
                 {e: 'a', h: socialUrl.fb, c: 'social fb'},
                 {e: 'a', h: socialUrl.twitter, c: 'social twitter'},
                 {e: 'a', h: socialUrl.pinterest, c: 'social pin'},

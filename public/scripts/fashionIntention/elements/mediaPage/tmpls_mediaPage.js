@@ -8,12 +8,21 @@
     tmpls.mediaPage = function (mediaItems) {
 
         var mediaItemsContent = [],
-            imagePath = fin.settings.controlsDescriptors.site.contentImagesPath;
+            imagePath = fin.settings.controlsDescriptors.site.contentImagesPath,
+            mediaContent={};
 
         a9.each(mediaItems, function (mediaItem) {
+
+            if(mediaItem.videoSrc&&mediaItem.videoSrc!=''){
+                mediaContent={c:'video',C: {e: 'iframe', a:{width:'556', height:'338', src:mediaItem.videoSrc, frameborder:'0'}}};
+                //mediaContent = {c: 'image', e: 'img', a: {src: imagePath + mediaItem.imageSrc}}
+            }else{
+                mediaContent = {c: 'image', e: 'img', a: {src: imagePath + mediaItem.imageSrc}}
+            }
+
             mediaItemsContent.push({
                 c: 'post-item', C: [
-                    {c: 'image', e: 'img', a: {src: imagePath + mediaItem.videoSrc}},
+                    mediaContent,
                     {
                         c: 'text-wrapper', C: [
                         {c: 'text', H: mediaItem.text}

@@ -55,8 +55,8 @@ FIN.header = function ($object) {
     }
 
 
-    a9.addEvent($subscribeLink, eventOnPointerEnd, onSubscribeLinkClick);
-    a9.addEvent($subscribeInput, 'keydown', onSubscribeInputKeydown);
+    //a9.addEvent($subscribeLink, eventOnPointerEnd, onSubscribeLinkClick);
+    //a9.addEvent($subscribeInput, 'keydown', onSubscribeInputKeydown);
 
     $object.appendChild(build.r);
 };

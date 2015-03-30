@@ -50,6 +50,11 @@
     float: right;
 
 }
+.post-item .video{
+    width: 556px;
+    float: right;
+
+}
 
 .post-item .text-wrapper{
     background-color: #ffffff;

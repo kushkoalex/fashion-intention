@@ -10,7 +10,7 @@ A9.ready(function (a9, global) {
         $articles = $('articles'),
         $about = $('about'),
         $media = $('media'),
-        //$partnership = $('partnership'),
+        $articleDetails = $('articleDetails'),
         //$news = $('news'),
         //$contacts = $('contacts'),
 
@@ -27,6 +27,9 @@ A9.ready(function (a9, global) {
     }
     if ($postDetails !== null) {
         fin.postDetails($postDetails);
+    }
+    if ($articleDetails !== null) {
+        fin.articleDetails($articleDetails);
     }
     if ($articles !== null) {
         fin.articles($articles);
