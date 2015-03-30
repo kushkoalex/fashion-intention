@@ -6,6 +6,7 @@ FIN.mainPage = function ($parent) {
         tp = global.cnCt.tp,
         settings = fin.settings,
         posts = settings.dataModels.posts,
+        $header,
         $fragment,
         $postMenuWrapper,
         $mainPage,
@@ -20,8 +21,12 @@ FIN.mainPage = function ($parent) {
     build = tp('mainPage',posts);
     $postMenuWrapper = build.postMenuWrapper;
     $mainPage = build.r;
+    $header = build.header;
 
     fin.postMenu($postMenuWrapper);
+    fin.header($header);
+
+
 
     $parent.appendChild($mainPage);
 

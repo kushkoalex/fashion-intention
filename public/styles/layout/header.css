@@ -1,5 +1,5 @@
 .header {
-    height: 27px;
+    height: 28px;
     background-color: #000000;
     position: relative;
 }
@@ -15,6 +15,20 @@
     display: block;
 }
 
+.subscribeControlContainer{
+    margin-left: -520px;
+    left: 50%;
+    position: absolute;
+}
+
+.subscribeControlContainer .subscribe-input.hidden{
+    display: none;
+}
+
+.subscribeControlContainer .subscribe.hidden{
+    display: none;
+}
+
 .subscribe,
 .feedback
 {
@@ -22,18 +36,18 @@
     font-size: 10px;
     color: #ffffff;
     letter-spacing: 1px;
-    position: absolute;
-    left: 50%;
-    top: 5px;
     border-bottom: 1px dashed #ffffff;
     text-decoration: none;
 }
 .subscribe {
-    margin-left: -520px;
+    /*margin-left: -520px;*/
 }
 
 .feedback{
     margin-left: 480px;
+    position: absolute;
+    left: 50%;
+    top: 5px;
 }
 
 .social{
@@ -63,20 +77,24 @@
     top: 5px;
 }
 
+.subscribe-input,
 .search{
-    position: absolute;
-    left: 50%;
-    margin-left: 250px;
+    border: none;
     width: 150px;
-    margin-top: 1px;
     height: 24px;
+    outline: none;
     color: #acacac;
     font-family: Georgia,serif;
     font-style: italic;
     font-size: 10px;
     padding-left: 10px;
     background: #ffffff url(../../images/search-arrow.png) no-repeat 125px 6px;
+    padding-right: 28px;
+}
 
-    padding-right: 23px;
-
+.search{
+    position: absolute;
+    left: 50%;
+    margin-left: 250px;
+    margin-top: 2px;
 }

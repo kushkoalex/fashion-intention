@@ -65,6 +65,9 @@ FIN.postMenu = function ($object) {
     build = tp('postMenuWrapper', $fragment);
 
     $link = build.toggleLink;
+
+    console.log($link);
+
     $menuContent = build.menuContent;
     $closeButton = build.closeButton;
     $postMenu = build.postMenuContainer;
