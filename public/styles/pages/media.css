@@ -1,0 +1,34 @@
+.media-items{
+    margin-top: 65px;
+    text-align: center;
+}
+
+.media-items .title {
+    min-width: 777px;
+    max-width: 1200px;
+    border: 1px solid #a8a8a8;
+    padding: 10px;
+    position: relative;
+    margin: 0 auto;
+    display: inline-block;
+    /*line-height: 30px;*/
+}
+
+.media-items .title .title-text {
+    text-align: center;
+    font-size: 29px;
+}
+
+.media-items .post-item{
+    background-color: #f9f9f9;
+    position: relative;
+}
+
+.media-items .post-item .text-wrapper{
+    /*height: 100%;*/
+    margin-right: 556px;
+    background-color: #f9f9f9;
+    /*position: absolute;*/
+    padding-top: 50px;
+    padding-bottom: 50px;
+}

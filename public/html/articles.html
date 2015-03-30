@@ -119,11 +119,15 @@
         <script type="text/javascript" src="../scripts/fashionIntention/modules/commonTmpls/footer.js?v=0.0.1"></script>
         <script type="text/javascript" src="../scripts/fashionIntention/elements/articles/articles.js?v=0.0.1"></script>
         <script type="text/javascript" src="../scripts/fashionIntention/elements/articles/tmpls_article.js?v=0.0.1"></script>
+        <script type="text/javascript" src="../scripts/fashionIntention/elements/content/contentPage.js?v=0.0.1"></script>
+        <script type="text/javascript" src="../scripts/fashionIntention/elements/content/tmpls_contentPage.js?v=0.0.1"></script>
         <script type="text/javascript" src="../scripts/fashionIntention/elements/header/header.js?v=0.0.1"></script>
         <script type="text/javascript" src="../scripts/fashionIntention/elements/header/tmpls_header.js?v=0.0.1"></script>
         <script type="text/javascript" src="../scripts/fashionIntention/elements/mainMenu/tmpls_mainMenu.js?v=0.0.1"></script>
         <script type="text/javascript" src="../scripts/fashionIntention/elements/mainPage/mainPage.js?v=0.0.1"></script>
         <script type="text/javascript" src="../scripts/fashionIntention/elements/mainPage/tmpls_mainPage.js?v=0.0.1"></script>
+        <script type="text/javascript" src="../scripts/fashionIntention/elements/mediaPage/mediaPage.js?v=0.0.1"></script>
+        <script type="text/javascript" src="../scripts/fashionIntention/elements/mediaPage/tmpls_mediaPage.js?v=0.0.1"></script>
         <script type="text/javascript" src="../scripts/fashionIntention/elements/postDetails/postDetails.js?v=0.0.1"></script>
         <script type="text/javascript" src="../scripts/fashionIntention/elements/postDetails/tmpls_postDetails.js?v=0.0.1"></script>
         <script type="text/javascript" src="../scripts/fashionIntention/elements/postMenu/postMenu.js?v=0.0.1"></script>
@@ -136,6 +140,7 @@
         <link rel="stylesheet" type="text/css" href="../styles/blocks/post.css?v=0.0.1" media="screen"/>
         <link rel="stylesheet" type="text/css" href="../styles/pages/articles.css?v=0.0.1" media="screen"/>
         <link rel="stylesheet" type="text/css" href="../styles/pages/main-page.css?v=0.0.1" media="screen"/>
+        <link rel="stylesheet" type="text/css" href="../styles/pages/media.css?v=0.0.1" media="screen"/>
         <link rel="stylesheet" type="text/css" href="../styles/pages/post-details.css?v=0.0.1" media="screen"/>
         <link rel="stylesheet" type="text/css" href="../styles/layout/footer.css?v=0.0.1" media="screen"/>
         <link rel="stylesheet" type="text/css" href="../styles/layout/header.css?v=0.0.1" media="screen"/>
@@ -209,7 +214,9 @@
                     subscribeSuccessful:'Вы успешно подписались на рассылку',
                     feedbackTitle:'обратная связь',
                     searchInputText:'Поиск по сайту',
-                    articlesTitle:'Пресса'
+                    articlesTitle:'Пресса',
+                    aboutTitle:'Оксана Литвиненко',
+                    mediaTitle:'медиа'
 
                 }
             }
@@ -234,9 +241,9 @@
                 partnershipPageUrl: 'partnership.html',
                 contactsPageUrl: 'contacts.html',
                 mainPageUrl: 'index.html',
-                postDetailsUrl: 'post/{id}',
-                postsUrl: 'posts/{year}/{month}',
-                articleDetailsUrl: 'press/{id}'
+                postDetailsUrl: '/post/{id}',
+                postsUrl: '/posts/{year}/{month}',
+                articleDetailsUrl: '/press/{id}'
             };
 
             fin.settings.controlsDescriptors.site.url = {
@@ -3493,6 +3500,39 @@
                     date: '16.11.2015',
                     title: 'title title title',
                     description: 'description description description description description description description description '
+                }
+            ];
+
+        }(FIN, A9));
+    </script>
+
+
+    <script type="text/javascript">
+        (function (fin, a9) {
+            var settings = fin.settings,
+                    dataModels = settings.dataModels;
+
+            dataModels.contents = [
+                {
+                    imageSrc: 'image0.jpg',
+                    text: 'title title title'
+                }
+            ];
+
+        }(FIN, A9));
+    </script>
+
+
+    <script type="text/javascript">
+        (function (fin, a9) {
+            var settings = fin.settings,
+                    dataModels = settings.dataModels;
+
+            dataModels.media = [
+                {
+                    imageSrc: 'image0.jpg',
+                    videoSrc: 'image1.jpg',
+                    text: 'title title title'
                 }
             ];
 

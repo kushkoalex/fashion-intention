@@ -8,8 +8,8 @@ A9.ready(function (a9, global) {
         $mainPage = $('mainPage'),
         $postDetails = $('postDetails'),
         $articles = $('articles'),
-        //$eventDetails = $('eventDetails'),
-        //$media = $('media'),
+        $about = $('about'),
+        $media = $('media'),
         //$partnership = $('partnership'),
         //$news = $('news'),
         //$contacts = $('contacts'),
@@ -31,7 +31,12 @@ A9.ready(function (a9, global) {
     if ($articles !== null) {
         fin.articles($articles);
     }
-
+    if ($about !== null) {
+        fin.contentPage($about);
+    }
+    if ($media !== null) {
+        fin.mediaPage($media);
+    }
     //if ($events !== null) {
     //    nv.events($events);
     //}
@@ -40,9 +45,7 @@ A9.ready(function (a9, global) {
     //    nv.eventDetails($eventDetails);
     //}
     //
-    //if ($media !== null) {
-    //    nv.media($media);
-    //}
+
     //
     //if ($partnership !== null) {
     //    nv.partnership($partnership);
