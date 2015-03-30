@@ -1,24 +1,27 @@
 <script type="text/javascript">
-    (function (fin, a9) {
-        var settings = fin.settings,
-                l10n = a9.l10n,
-                controlsDescriptors = settings.controlsDescriptors;
+    (function (fin) {
 
-        controlsDescriptors.site = {
-            urlEM: 'http://eugene-miller.com',
+        fin.settings.controlsDescriptors.site = {
             contentImagesPath: '../images/content/',
             mainPageSlideTimeout: 10000,
-            mainPageUrl: 'index.html',
             newsPageUrl: 'news.html',
             eventsPageUrl: 'events.html',
             eventDetailsPageUrl: 'event-details.html/{id}',
             mediaPageUrl: 'media.html',
             partnershipPageUrl: 'partnership.html',
             contactsPageUrl: 'contacts.html',
+            mainPageUrl: 'index.html',
             postDetailsUrl: 'post/{id}',
             postsUrl: 'posts/{year}/{month}'
         };
 
-    }(FIN, A9));
+        fin.settings.controlsDescriptors.site.url = {
+            em: 'http://eugene-miller.com',
+            fb: 'https://www.facebook.com',
+            twitter: 'https://twitter.com/',
+            pinterest: 'https://ru.pinterest.com/'
+        }
+
+    }(FIN));
 </script>
 

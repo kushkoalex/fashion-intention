@@ -66,8 +66,6 @@ FIN.postMenu = function ($object) {
 
     $link = build.toggleLink;
 
-    console.log($link);
-
     $menuContent = build.menuContent;
     $closeButton = build.closeButton;
     $postMenu = build.postMenuContainer;

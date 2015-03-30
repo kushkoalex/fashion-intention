@@ -13,7 +13,7 @@
                 H: l10n('emMadeIn', 'firstUpper'),
                 C: [
                     {e: 'br'},
-                    {e: 'a', h: controlsDescriptors.site.urlEM, t: l10n('emStudio', 'firstUpper')}
+                    {e: 'a', h: controlsDescriptors.site.url.em, t: l10n('emStudio', 'firstUpper')}
                 ]
             }
         };

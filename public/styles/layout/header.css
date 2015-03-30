@@ -60,14 +60,14 @@
     height: 19px;
     background: url(../../images/social-fb.png);
     margin-left: -335px;
-    top: 4px;
+    top: 5px;
 }
 .social.twitter{
     width: 12px;
     height: 17px;
     background: url(../../images/social-twitter.png);
     margin-left: -280px;
-    top: 5px;
+    top: 6px;
 }
 .social.pin{
     width: 18px;
@@ -75,6 +75,10 @@
     background: url(../../images/social-pin.png);
     margin-left: -235px;
     top: 5px;
+}
+
+.subscribe-input.error{
+    color: #f00;
 }
 
 .subscribe-input,
@@ -97,4 +101,17 @@
     left: 50%;
     margin-left: 250px;
     margin-top: 2px;
+}
+
+.subscribed{
+    color: #fff;
+    font-family: Georgia,serif;
+    font-style: italic;
+    font-size: 12px;
+    padding-top: 8px;
+margin-left: -50px;
+}
+
+.subscribed.hidden{
+    display: none;
 }

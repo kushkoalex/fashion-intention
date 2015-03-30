@@ -6,35 +6,41 @@
     tmpls.headerContent = function (isMainPage) {
 
         var logo,
-            mainPageUrl = fin.settings.controlsDescriptors.site.mainPageUrl;
+            socialUrl = fin.settings.controlsDescriptors.site.url;
         if (isMainPage) {
             logo = {c: 'logo'};
         } else {
-            logo = {e: 'a', h: mainPageUrl, c: 'logo'};
+            logo = {e: 'a', h: fin.settings.controlsDescriptors.site.mainPageUrl, c: 'logo'};
         }
 
         return {
-            c: 'header', n:'header', C: [
+            c: 'header', n: 'header', C: [
                 tmpls.subscribeControl(),
-                {e: 'a', h: '', c: 'social fb'},
-                {e: 'a', h: '', c: 'social twitter'},
-                {e: 'a', h: '', c: 'social pin'},
-                {e: 'a', h: '', c: 'feedback',t:'обратная связь'},
-                {e: 'input', T: 'text', c: 'search', a: {placeholder: 'Поиск по сайту'}},
+                {e: 'a', h: socialUrl.fb, c: 'social fb'},
+                {e: 'a', h: socialUrl.twitter, c: 'social twitter'},
+                {e: 'a', h: socialUrl.pinterest, c: 'social pin'},
+                //{e: 'a', h: '', c: 'feedback',t:l10n('feedbackTitle')},
+                //{e: 'input', T: 'text', c: 'search', a: {placeholder: l10n('searchInputText','firstUpper')}},
                 logo
             ]
         }
     };
 
-    tmpls.header = function(){
-        return {c: 'header', n:'header'};
+    tmpls.header = function () {
+        return {c: 'header', n: 'header'};
     };
 
     tmpls.subscribeControl = function () {
         return {
-            c: 'subscribeControlContainer', n:'subscribeControl', C: [
-                {e: 'a', h: '#', c: 'subscribe', t: l10n('subscribeTitle'), n:'subscribeLink'},
-                {e:'input',c:'subscribe-input hidden',n:'subscribeInput', a: {placeholder: 'Введите email'}}
+            c: 'subscribeControlContainer', n: 'subscribeControl', C: [
+                {e: 'a', h: '#', c: 'subscribe', t: l10n('subscribeTitle'), n: 'subscribeLink'},
+                {
+                    e: 'input',
+                    c: 'subscribe-input hidden',
+                    n: 'subscribeInput',
+                    a: {placeholder: l10n('subscribeEnterEmail', 'firstUpper')}
+                },
+                {c: 'subscribed hidden', n: 'subscribed', t: l10n('subscribeSuccessful', 'firstUpper')}
             ]
         };
     };
