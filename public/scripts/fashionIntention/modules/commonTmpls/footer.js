@@ -3,7 +3,6 @@
         a9 = fin.global.A9,
         l10n = a9.l10n;
 
-
     tmpls.footer = function () {
         var controlsDescriptors = fin.settings.controlsDescriptors;
 

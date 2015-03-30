@@ -7,7 +7,7 @@ A9.ready(function (a9, global) {
         //$footer = $('footer'),
         $mainPage = $('mainPage'),
         $postDetails = $('postDetails'),
-        //$events = $('events'),
+        $articles = $('articles'),
         //$eventDetails = $('eventDetails'),
         //$media = $('media'),
         //$partnership = $('partnership'),
@@ -27,6 +27,9 @@ A9.ready(function (a9, global) {
     }
     if ($postDetails !== null) {
         fin.postDetails($postDetails);
+    }
+    if ($articles !== null) {
+        fin.articles($articles);
     }
 
     //if ($events !== null) {

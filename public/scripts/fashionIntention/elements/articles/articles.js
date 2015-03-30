@@ -1,22 +1,22 @@
-FIN.postDetails = function ($parent) {
+FIN.articles = function ($parent) {
     var fin = this,
         global = fin.global,
         tp = global.cnCt.tp,
         settings = fin.settings,
-        post = settings.dataModels.post,
+        articles = settings.dataModels.articles,
         $header,
         $postMenuWrapper,
-        $postDetails,
+        $articles,
         build,
         u;
 
-    build = tp('postDetails', post);
+    build = tp('articles', articles);
     $postMenuWrapper = build.postMenuWrapper;
-    $postDetails = build.r;
+    $articles = build.r;
     $header = build.header;
 
     fin.postMenu($postMenuWrapper);
     fin.header($header);
 
-    $parent.appendChild($postDetails);
+    $parent.appendChild($articles);
 };

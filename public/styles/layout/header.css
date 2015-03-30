@@ -79,6 +79,7 @@
 
 .subscribe-input.error{
     color: #f00;
+    border: 2px solid #f00;
 }
 
 .subscribe-input,

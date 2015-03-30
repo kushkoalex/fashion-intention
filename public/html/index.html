@@ -117,6 +117,8 @@
         <script type="text/javascript" src="../scripts/fashionIntention/FIN.js?v=0.0.1"></script>
         <script type="text/javascript" src="../scripts/fashionIntention/modules/commonTmpls/clear.js?v=0.0.1"></script>
         <script type="text/javascript" src="../scripts/fashionIntention/modules/commonTmpls/footer.js?v=0.0.1"></script>
+        <script type="text/javascript" src="../scripts/fashionIntention/elements/articles/articles.js?v=0.0.1"></script>
+        <script type="text/javascript" src="../scripts/fashionIntention/elements/articles/tmpls_article.js?v=0.0.1"></script>
         <script type="text/javascript" src="../scripts/fashionIntention/elements/header/header.js?v=0.0.1"></script>
         <script type="text/javascript" src="../scripts/fashionIntention/elements/header/tmpls_header.js?v=0.0.1"></script>
         <script type="text/javascript" src="../scripts/fashionIntention/elements/mainMenu/tmpls_mainMenu.js?v=0.0.1"></script>
@@ -131,9 +133,10 @@
 
     <!-- start css template tags -->
         <link rel="stylesheet" type="text/css" href="../styles/default.css?v=0.0.1" media="screen"/>
-        <link rel="stylesheet" type="text/css" href="../styles/blocks/post-details.css?v=0.0.1" media="screen"/>
         <link rel="stylesheet" type="text/css" href="../styles/blocks/post.css?v=0.0.1" media="screen"/>
+        <link rel="stylesheet" type="text/css" href="../styles/pages/articles.css?v=0.0.1" media="screen"/>
         <link rel="stylesheet" type="text/css" href="../styles/pages/main-page.css?v=0.0.1" media="screen"/>
+        <link rel="stylesheet" type="text/css" href="../styles/pages/post-details.css?v=0.0.1" media="screen"/>
         <link rel="stylesheet" type="text/css" href="../styles/layout/footer.css?v=0.0.1" media="screen"/>
         <link rel="stylesheet" type="text/css" href="../styles/layout/header.css?v=0.0.1" media="screen"/>
         <link rel="stylesheet" type="text/css" href="../styles/layout/main-menu.css?v=0.0.1" media="screen"/>
@@ -205,7 +208,8 @@
                     subscribeEnterEmail:'Введите email',
                     subscribeSuccessful:'Вы успешно подписались на рассылку',
                     feedbackTitle:'обратная связь',
-                    searchInputText:'Поиск по сайту'
+                    searchInputText:'Поиск по сайту',
+                    articlesTitle:'Пресса'
 
                 }
             }
@@ -231,10 +235,11 @@
                 contactsPageUrl: 'contacts.html',
                 mainPageUrl: 'index.html',
                 postDetailsUrl: 'post/{id}',
-                postsUrl: 'posts/{year}/{month}'
+                postsUrl: 'posts/{year}/{month}',
+                articleDetailsUrl: 'press/{id}'
             };
 
-            fin.settings.controlsDescriptors.site.url={
+            fin.settings.controlsDescriptors.site.url = {
                 em: 'http://eugene-miller.com',
                 fb: 'https://www.facebook.com',
                 twitter: 'https://twitter.com/',
@@ -3460,6 +3465,36 @@
                     "imageSrc": "image9.jpg"
                 }
             ]
+
+        }(FIN, A9));
+    </script>
+
+
+    <script type="text/javascript">
+        (function (fin, a9) {
+            var settings = fin.settings,
+                    dataModels = settings.dataModels;
+
+            dataModels.articles = [
+                {
+                    id: 0,
+                    date: '16.11.2015',
+                    title: 'title title title',
+                    description: 'description description description description description description description description '
+                },
+                {
+                    id: 0,
+                    date: '16.11.2015',
+                    title: 'title title title',
+                    description: 'description description description description description description description description '
+                },
+                {
+                    id: 0,
+                    date: '16.11.2015',
+                    title: 'title title title',
+                    description: 'description description description description description description description description '
+                }
+            ];
 
         }(FIN, A9));
     </script>

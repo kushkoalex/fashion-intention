@@ -1,0 +1,62 @@
+.articles-container{
+    margin-top: 65px;
+    text-align: center;
+    color: #474747;
+}
+
+.articles-container .articles-page-title {
+    /*min-width: 777px;*/
+    max-width: 1200px;
+    border: 1px solid #dbd7d7;
+    padding: 10px;
+    position: relative;
+    margin: 0 auto;
+    display: inline-block;
+    /*line-height: 30px;*/
+}
+
+.articles-container .articles-page-title .title-text {
+    text-align: center;
+    font-size: 29px;
+    padding: 0 30px;
+}
+
+.articles-container .articles{
+    margin-top: 60px;
+}
+
+.articles-container .articles .article
+{
+    font-size: 15px;
+    text-align: left;
+
+
+
+}
+.articles-container .articles .article .article-wrapper
+{
+    background-color: #ffffff;
+    padding: 15px 100px;
+}
+
+.articles-container .articles .article .date{
+    font-family: 'Georgia', serif;
+
+}
+.articles-container .articles .article .title{
+    padding-top: 8px;
+    font-size: 29px;
+}
+.articles-container .articles .article .title a{
+    color: inherit;
+}
+.articles-container .articles .article .description{
+    padding-top: 8px;
+    font-family: 'Georgia', serif;
+}
+.articles-container .articles .article .pattern{
+    height: 114px;
+    background: url("../../images/text-block-pattern.png") no-repeat center center;
+}
+
+
