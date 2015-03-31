@@ -7,6 +7,9 @@ FIN.articleDetails = function ($parent) {
         $header,
         $postMenuWrapper,
         $postDetails,
+        $categoryMenuItemLink,
+        $categoryMenu,
+        $slider,
         build,
         u;
 
@@ -14,9 +17,16 @@ FIN.articleDetails = function ($parent) {
     $postMenuWrapper = build.postMenuWrapper;
     $postDetails = build.r;
     $header = build.header;
+    $slider = build.slider;
+    $categoryMenu = build.categoryMenuWrapper;
+
+    $categoryMenuItemLink = build.categoryMenuItemLink;
 
     fin.postMenu($postMenuWrapper);
     fin.header($header);
+    fin.slider($slider);
+
+    fin.categoryMenu($categoryMenu, $categoryMenuItemLink);
 
     $parent.appendChild($postDetails);
 };

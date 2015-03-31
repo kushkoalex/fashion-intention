@@ -13,8 +13,9 @@
     };
 
 
-    tmpls.slider = function(banners){
+    tmpls.slider = function(){
         var activeClassName,
+            banners = fin.settings.dataModels.mainBanners,
             images = [];
 
         for (var i = 0; i < banners.length; i++) {

@@ -7,6 +7,9 @@ FIN.postDetails = function ($parent) {
         $header,
         $postMenuWrapper,
         $postDetails,
+        $categoryMenuItemLink,
+        $categoryMenu,
+        $slider,
         build,
         u;
 
@@ -14,9 +17,15 @@ FIN.postDetails = function ($parent) {
     $postMenuWrapper = build.postMenuWrapper;
     $postDetails = build.r;
     $header = build.header;
+    $slider = build.slider;
+    $categoryMenu = build.categoryMenuWrapper;
+    $categoryMenuItemLink = build.categoryMenuItemLink;
+    fin.categoryMenu($categoryMenu, $categoryMenuItemLink);
 
     fin.postMenu($postMenuWrapper);
     fin.header($header);
+
+    fin.slider($slider);
 
     $parent.appendChild($postDetails);
 };

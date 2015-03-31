@@ -20,16 +20,18 @@ FIN.mainPage = function ($parent) {
     $mainPage = build.r;
     $header = build.header;
     $slider = build.slider;
-    $categoryMenu = build.categoryMenuWrapper;
 
+    $categoryMenu = build.categoryMenuWrapper;
     $categoryMenuItemLink = build.categoryMenuItemLink;
+    fin.categoryMenu($categoryMenu, $categoryMenuItemLink);
 
     fin.postMenu($postMenuWrapper);
     fin.header($header);
 
+
     fin.slider($slider);
 
-    fin.categoryMenu($categoryMenu, $categoryMenuItemLink);
+
 
     $parent.appendChild($mainPage);
 };

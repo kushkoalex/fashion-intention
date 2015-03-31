@@ -7,6 +7,9 @@ FIN.mediaPage = function ($parent) {
         $header,
         $postMenuWrapper,
         $postDetails,
+        $categoryMenuItemLink,
+        $categoryMenu,
+        $slider,
         build,
         u;
 
@@ -14,9 +17,13 @@ FIN.mediaPage = function ($parent) {
     $postMenuWrapper = build.postMenuWrapper;
     $postDetails = build.r;
     $header = build.header;
-
+    $categoryMenu = build.categoryMenuWrapper;
+    $categoryMenuItemLink = build.categoryMenuItemLink;
+    fin.categoryMenu($categoryMenu, $categoryMenuItemLink);
+    $slider = build.slider;
     fin.postMenu($postMenuWrapper);
     fin.header($header);
+    fin.slider($slider);
 
     $parent.appendChild($postDetails);
 };

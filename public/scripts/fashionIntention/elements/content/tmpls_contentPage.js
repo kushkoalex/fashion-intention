@@ -31,7 +31,7 @@
             tmpls.header(),
             {
                 c: 'main-image-content-container', C: [
-                {c: 'main-image-content'},
+                {c: 'main-image-content', n:'sliderContainer', C:tmpls.slider()},
                 tmpls.postMenu(),
                 tmpls.mainMenu()
             ]

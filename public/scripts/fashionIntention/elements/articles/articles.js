@@ -6,7 +6,10 @@ FIN.articles = function ($parent) {
         articles = settings.dataModels.articles,
         $header,
         $postMenuWrapper,
+        $categoryMenuItemLink,
+        $categoryMenu,
         $articles,
+        $slider,
         build,
         u;
 
@@ -14,9 +17,14 @@ FIN.articles = function ($parent) {
     $postMenuWrapper = build.postMenuWrapper;
     $articles = build.r;
     $header = build.header;
+    $slider = build.slider;
+    $categoryMenu = build.categoryMenuWrapper;
+    $categoryMenuItemLink = build.categoryMenuItemLink;
+    fin.categoryMenu($categoryMenu, $categoryMenuItemLink);
 
     fin.postMenu($postMenuWrapper);
     fin.header($header);
+    fin.slider($slider);
 
     $parent.appendChild($articles);
 };

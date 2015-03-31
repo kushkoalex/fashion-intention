@@ -32,7 +32,7 @@
             tmpls.header(true),
             {
                 c: 'main-image-content-container', C: [
-                {c: 'main-image-content', n:'sliderContainer', C:tmpls.slider(mainPageData.mainBanners)},
+                {c: 'main-image-content', n:'sliderContainer', C:tmpls.slider()},
                 tmpls.postMenu(),
                 tmpls.mainMenu()
             ]
