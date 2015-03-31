@@ -91,7 +91,7 @@ FIN.postMenu = function ($object) {
         }
     }
 
-    function doNotCloseMenu(e) {
+    function preventCloseMenu(e) {
         if (e.stopPropagation) {
             e.stopPropagation();
         } else {
@@ -144,7 +144,7 @@ FIN.postMenu = function ($object) {
     a9.addEvent($link, eventOnPointerEnd, toggleMenu);
     a9.addEvent($closeButton, eventOnPointerEnd, closeMenu);
     a9.addEvent($body, eventOnPointerEnd, closeMenu);
-    a9.addEvent($postMenuWrapper, eventOnPointerEnd, doNotCloseMenu);
+    a9.addEvent($postMenuWrapper, eventOnPointerEnd, preventCloseMenu);
 
 
     //a9.each(posts, function(post,i){

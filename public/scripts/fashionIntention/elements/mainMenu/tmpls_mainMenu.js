@@ -3,43 +3,58 @@
 
     tmpls.mainMenu = function () {
         var menuData = fin.settings.dataModels.mainMenu,
+
             menuItems = [],
             menuItem,
             isActiveMenuItem = false,
-            isSelectedMenuItem = false;
+            isSelectedMenuItem = false,
+            isCategoryMenuItem = false;
 
         for (var i = 0; i < menuData.length; i++) {
             isSelectedMenuItem = menuData[i].selected;
             isActiveMenuItem = menuData[i].active;
+            isCategoryMenuItem = menuData[i].isCategoryMenuItem;
 
-            if(isActiveMenuItem){
+
+            if (isCategoryMenuItem) {
                 menuItem = {
-                    e: 'li', c:'active '+menuData[i].cssClass, C: {
+                    e: 'li', n: 'categoryMenuItemLink', c: menuData[i].cssClass, C: [{
+                        H: '<span>' + menuData[i].title + '</span>'
+                    }]
+                };
+
+                menuItem.C.push(tmpls.categoryMenu())
+            }
+            else if (isActiveMenuItem) {
+                menuItem = {
+                    e: 'li', c: 'active ' + menuData[i].cssClass, C: [{
                         e: 'a',
                         h: menuData[i].url,
                         H: menuData[i].title
-                    }
+                    }]
                 };
             }
-            else if(isSelectedMenuItem)
-            {
+            else if (isSelectedMenuItem) {
                 menuItem = {
-                    e: 'li', c:menuData[i].cssClass, C: {
-                        H: '<span>'+ menuData[i].title+'</span>'
-                    }
+                    e: 'li', c: menuData[i].cssClass, C: [{
+                        H: '<span>' + menuData[i].title + '</span>'
+                    }]
                 };
             }
             else {
                 menuItem = {
-                    e: 'li', c:menuData[i].cssClass, C: {
+                    e: 'li', c: menuData[i].cssClass, C: [{
                         e: 'a',
                         h: menuData[i].url,
                         H: menuData[i].title
-                    }
+                    }]
                 };
             }
 
+
             menuItems.push(menuItem);
+
+
         }
 
         //return {

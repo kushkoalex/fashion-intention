@@ -56,3 +56,5 @@
 .main-menu .travel{
      background: url(../../images/menu-item-travel.png) no-repeat;
 }
+
+.main-menu .category span{cursor: pointer}
