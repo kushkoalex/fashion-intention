@@ -5,12 +5,15 @@
         u;
 
 
-    tmpls.mainPage = function (posts) {
+
+
+
+    tmpls.mainPage = function (mainPageData) {
 
         var content = [],
             direction = '';
 
-        for (var i = 0; i < posts.length; i++) {
+        for (var i = 0; i < mainPageData.posts.length; i++) {
             if (i % 2 == 0) {
                 if (direction == 'left') {
                     direction = 'right'
@@ -19,8 +22,8 @@
                 }
             }
 
-            posts[i].direction = direction;
-            content.push(tmpls.postPreviewWrapper(posts[i]));
+            mainPageData.posts[i].direction = direction;
+            content.push(tmpls.postPreviewWrapper(mainPageData.posts[i]));
         }
 
         content.push(tmpls.clear());
@@ -29,7 +32,7 @@
             tmpls.header(true),
             {
                 c: 'main-image-content-container', C: [
-                {c: 'main-image-content'},
+                {c: 'main-image-content', n:'sliderContainer', C:tmpls.slider(mainPageData.mainBanners)},
                 tmpls.postMenu(),
                 tmpls.mainMenu()
             ]

@@ -134,11 +134,14 @@
         <script type="text/javascript" src="../scripts/fashionIntention/elements/postDetails/tmpls_postDetails.js?v=0.0.1"></script>
         <script type="text/javascript" src="../scripts/fashionIntention/elements/postMenu/postMenu.js?v=0.0.1"></script>
         <script type="text/javascript" src="../scripts/fashionIntention/elements/postMenu/tmpls_postMenu.js?v=0.0.1"></script>
+        <script type="text/javascript" src="../scripts/fashionIntention/elements/slider/slider.js?v=0.0.1"></script>
+        <script type="text/javascript" src="../scripts/fashionIntention/elements/slider/tmpls_slider.js?v=0.0.1"></script>
         <script type="text/javascript" src="../scripts/init.js?v=0.0.1"></script>
     <!-- end script template tags -->
 
     <!-- start css template tags -->
         <link rel="stylesheet" type="text/css" href="../styles/default.css?v=0.0.1" media="screen"/>
+        <link rel="stylesheet" type="text/css" href="../styles/blocks/image-slider.css?v=0.0.1" media="screen"/>
         <link rel="stylesheet" type="text/css" href="../styles/blocks/post.css?v=0.0.1" media="screen"/>
         <link rel="stylesheet" type="text/css" href="../styles/pages/articles.css?v=0.0.1" media="screen"/>
         <link rel="stylesheet" type="text/css" href="../styles/pages/main-page.css?v=0.0.1" media="screen"/>
@@ -3601,6 +3604,54 @@
                     months: [3,2]
                 }
             ]
+
+        }(FIN, A9));
+    </script>
+
+
+    <script type="text/javascript">
+        (function (fin, a9) {
+            var settings = fin.settings,
+                    dataModels = settings.dataModels;
+
+            dataModels.advBanners = [
+                {
+                    imageSrc: 'image0.jpg',
+                    url: 'http://google.com'
+                },
+                {
+                    imageSrc: 'image1.jpg',
+                    url: 'http://google.com'
+                },
+                {
+                    imageSrc: 'image2.jpg',
+                    url: 'http://google.com'
+                }
+            ];
+
+        }(FIN, A9));
+    </script>
+
+
+    <script type="text/javascript">
+        (function (fin, a9) {
+            var settings = fin.settings,
+                    dataModels = settings.dataModels;
+
+            dataModels.mainBanners = [
+                {
+                    imageSrc: 'image0.jpg',
+                    url: 'http://google.com'
+                },
+                {
+                    imageSrc: 'image1.jpg',
+                    url: 'http://google.com'
+                },
+                {
+                    imageSrc: 'image2.jpg',
+                    url: 'http://google.com'
+                }
+            ];
 
         }(FIN, A9));
     </script>

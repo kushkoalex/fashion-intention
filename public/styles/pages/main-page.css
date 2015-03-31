@@ -6,9 +6,37 @@
 .main-image-content{
     height: 435px;
     position: relative;
-    background: url(../../images/content/image5.jpg);
-    background-size: cover;
+    /*background: url(../../images/content/image5.jpg);*/
+    /*background-size: cover;*/
 }
+
+.main-image-content .images-container{
+
+}
+
+.main-image-content .images-container .image
+{
+    height: 811px;
+    background-size: cover;
+    position: absolute;
+    width: 100%;
+
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+    opacity:0;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+}
+
+.main-image-content .images-container .image.active
+{
+    opacity:1;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=1);
+}
+
 
 .main-menu-container{
     height: 67px;

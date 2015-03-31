@@ -15,12 +15,12 @@
 
         return {
             c: 'header', n: 'header', C: [
-                //tmpls.subscribeControl(),
+                tmpls.subscribeControl(),
                 {e: 'a', h: socialUrl.fb, c: 'social fb'},
                 {e: 'a', h: socialUrl.twitter, c: 'social twitter'},
                 {e: 'a', h: socialUrl.pinterest, c: 'social pin'},
-                //{e: 'a', h: '', c: 'feedback',t:l10n('feedbackTitle')},
-                //{e: 'input', T: 'text', c: 'search', a: {placeholder: l10n('searchInputText','firstUpper')}},
+                {e: 'a', h: '', c: 'feedback',t:l10n('feedbackTitle')},
+                {e: 'input', T: 'text', c: 'search', a: {placeholder: l10n('searchInputText','firstUpper')}},
                 logo
             ]
         }
