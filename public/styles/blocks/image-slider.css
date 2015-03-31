@@ -1,26 +1,19 @@
-.image-slider-controls{
-    position: absolute;
-    width: 100%;
-    /*border: 1px solid red;*/
-    height: 100%;
-}
-
-.image-slider-controls .left, .image-slider-controls .right{
+.images-container .left,
+.images-container .right {
     width: 60px;
     height: 59px;
     position: absolute;
     top: 50%;
-    /*border: 1px solid red;*/
     cursor: pointer;
     margin-top: -28px;
 }
 
-.image-slider-controls .left{
+.images-container .left {
     background: url("../../images/main-banner-prev-slide.png") no-repeat;
     left: 15px;
 }
 
-.image-slider-controls .right{
+.images-container .right {
     background: url("../../images/main-banner-next-slide.png") no-repeat;
     right: 15px;
 }

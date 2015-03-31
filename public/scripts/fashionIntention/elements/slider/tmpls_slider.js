@@ -6,13 +6,10 @@
 
 
     tmpls.imageControls = function () {
-        return {
-            c: 'image-slider-controls',
-            C: [
+        return [
                 {c: 'left', n: 'slideLeft'},
                 {c: 'right', n: 'slideRight'}
             ]
-        }
     };
 
 
@@ -29,6 +26,8 @@
             }
 
             images.push({
+                e:'a',
+                h: banners[i].url,
                 c: 'image' + activeClassName,
                 n: 'img',
                 a: {style: 'background-image: url(' + fin.settings.controlsDescriptors.site.contentImagesPath + banners[i].imageSrc + ')'}
