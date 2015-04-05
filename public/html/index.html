@@ -257,7 +257,8 @@
                 mainPageUrl: 'index.html',
                 postDetailsUrl: '/post/{id}',
                 postsUrl: '/posts/{year}/{month}',
-                articleDetailsUrl: '/press/{id}'
+                articleDetailsUrl: '/press/{id}',
+                searchUrl:'/search'
             };
 
             fin.settings.controlsDescriptors.site.url = {
@@ -266,7 +267,9 @@
                 twitter: 'https://twitter.com/',
                 instagram:'https://instagram.com',
                 pinterest: 'https://ru.pinterest.com/'
-            }
+            };
+
+            fin.settings.controlsDescriptors.searchQuery='asd';
 
         }(FIN));
     </script>
