@@ -48,6 +48,7 @@
     position: absolute;
     left: 50%;
     top: 5px;
+    cursor: pointer;
 }
 
 .social{
@@ -115,4 +116,66 @@ margin-left: -50px;
 
 .subscribed.hidden{
     display: none;
+}
+
+.feedbackPanel{
+    position: absolute;
+    z-index: 1000;
+    left: 50%;
+    margin-left: 450px;
+    top:20px;
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+}
+
+.feedbackPanel.hidden{
+    display: none;
+}
+
+.feedbackPanel-triangle {
+    position: relative;
+    width: 10px;
+    height: 10px;
+    border: 10px solid transparent;
+    border-bottom-color: #ffffff;
+    margin: 0 auto;
+}
+
+.feedbackPanel-content{
+
+    background-color: #ffffff;
+    text-align: center;
+    width: 170px;
+    padding: 20px 25px 35px;
+
+}
+
+.feedbackPanel-content .dot{
+    width: 5px;
+    height: 5px;
+    background-color: #000000;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    position: relative;
+    margin: 20px auto;
+}
+.feedbackPanel-content .author-name{
+    font-size: 15px;
+}
+
+.feedbackPanel-content .phone{
+    font-family: 'PT Sans',serif;
+    font-size: 13px;
+    padding-top: 20px;
+}
+.feedbackPanel-content .feedback-social{
+    font-family: 'PT Sans',serif;
+    font-size: 13px;
+    padding-top: 8px;
+}
+.feedbackPanel-content .feedback-social a{
+    color: #0056a4;
 }

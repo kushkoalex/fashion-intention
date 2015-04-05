@@ -5,9 +5,12 @@ FIN.header = function ($object) {
         eventOnPointerEnd = a9.deviceInfo.eventOnPointerEnd,
         tp = global.cnCt.tp,
         build,
+        $body = document.body,
         $subscribeLink,
         $subscribeInput,
         $subscribed,
+        $feedbackPanel,
+        $feedbackLink,
         u;
 
 
@@ -16,6 +19,8 @@ FIN.header = function ($object) {
     $subscribeLink = build.subscribeLink;
     $subscribeInput = build.subscribeInput;
     $subscribed = build.subscribed;
+    $feedbackPanel = build.feedBackPanel;
+    $feedbackLink = build.feedbackLink;
 
 
     function onSubscribeLinkClick() {
@@ -54,9 +59,44 @@ FIN.header = function ($object) {
         }
     }
 
+    function onFeedbackLinkClick(e){
+        toggleFeedbackPanel(e);
+    }
+
+    function toggleFeedbackPanel(e){
+        if(a9.hasClass($feedbackPanel,'hidden')){
+            a9.removeClass($feedbackPanel, 'hidden');
+        }else{
+            a9.addClass($feedbackPanel, 'hidden');
+        }
+        if (e.stopPropagation) {
+            e.stopPropagation();
+        } else {
+            e.cancelBubble = true;
+        }
+    }
+
+    function closeFeedbackPanel() {
+        if (!a9.hasClass($feedbackPanel, 'hidden')) {
+            a9.addClass($feedbackPanel, 'hidden');
+        }
+    }
+
+    function preventCloseFeedbackPanel(e) {
+        if (e.stopPropagation) {
+            e.stopPropagation();
+        } else {
+            e.cancelBubble = true;
+        }
+    }
+
 
     a9.addEvent($subscribeLink, eventOnPointerEnd, onSubscribeLinkClick);
     a9.addEvent($subscribeInput, 'keydown', onSubscribeInputKeydown);
+    a9.addEvent($feedbackLink,eventOnPointerEnd, onFeedbackLinkClick);
+
+    a9.addEvent($body, eventOnPointerEnd, closeFeedbackPanel);
+    a9.addEvent($feedbackPanel, eventOnPointerEnd, preventCloseFeedbackPanel);
 
     $object.appendChild(build.r);
 };

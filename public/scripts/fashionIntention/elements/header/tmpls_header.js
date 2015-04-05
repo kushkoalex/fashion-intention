@@ -19,11 +19,28 @@
                 {e: 'a', h: socialUrl.fb, c: 'social fb'},
                 {e: 'a', h: socialUrl.twitter, c: 'social twitter'},
                 {e: 'a', h: socialUrl.pinterest, c: 'social pin'},
-                {e: 'a', h: '', c: 'feedback',t:l10n('feedbackTitle')},
+                {e: 'a', c: 'feedback',t:l10n('feedbackTitle'), n:'feedbackLink'},
                 {e: 'input', T: 'text', c: 'search', a: {placeholder: l10n('searchInputText','firstUpper')}},
-                logo
+                logo,
+                tmpls.feedbackPanel()
             ]
         }
+    };
+
+    tmpls.feedbackPanel = function(){
+        var url = fin.settings.controlsDescriptors.site.url;
+        return {c:'feedbackPanel hidden', n:'feedBackPanel',C:[
+            {c:'feedbackPanel-triangle'},
+            {c:'feedbackPanel-content',C:[
+                {c:'dot'},
+                {c:'author-name',t:l10n('authorName')},
+                {c:'dot'},
+                {c:'phone',t:l10n('phone')},
+                {c:'feedback-social fb',C:{e:'a',h:url.fb,t:l10n('fb','firstUpper')}},
+                {c:'feedback-social vk',C:{e:'a',h:url.vk,t:l10n('vk','firstUpper')}},
+                {c:'feedback-social instagram',C:{e:'a',h:url.instagram,t:l10n('instagram','firstUpper')}}
+            ]}
+        ]}
     };
 
     tmpls.header = function () {
