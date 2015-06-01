@@ -6,7 +6,8 @@
     tmpls.headerContent = function (isMainPage) {
 
         var logo,
-            socialUrl = fin.settings.controlsDescriptors.site.url;
+            socialUrl = fin.settings.controlsDescriptors.site.url,
+            searchUrl = fin.settings.controlsDescriptors.site.searchUrl;
         if (isMainPage) {
             logo = {c: 'logo'};
         } else {
@@ -20,7 +21,7 @@
                 {e: 'a', h: socialUrl.twitter, c: 'social twitter'},
                 {e: 'a', h: socialUrl.pinterest, c: 'social pin'},
                 {e: 'a', c: 'feedback',t:l10n('feedbackTitle'), n:'feedbackLink'},
-                {e: 'input', T: 'text', c: 'search', a: {placeholder: l10n('searchInputText','firstUpper')}},
+                {e:'form', a:{name:'search', method:'GET', action:searchUrl},C:{e: 'input', T: 'text', c: 'search', a: {placeholder: l10n('searchInputText','firstUpper'), name:'q',value:fin.settings.controlsDescriptors.searchQuery}}},
                 logo,
                 tmpls.feedbackPanel()
             ]
