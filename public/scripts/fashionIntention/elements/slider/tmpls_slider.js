@@ -7,13 +7,13 @@
 
     tmpls.imageControls = function () {
         return [
-                {c: 'left', n: 'slideLeft'},
-                {c: 'right', n: 'slideRight'}
-            ]
+            {c: 'left', n: 'slideLeft'},
+            {c: 'right', n: 'slideRight'}
+        ]
     };
 
 
-    tmpls.slider = function(){
+    tmpls.slider = function () {
         var activeClassName,
             banners = fin.settings.dataModels.mainBanners,
             images = [];
@@ -22,13 +22,13 @@
 
             if (i == 0) {
                 activeClassName = ' active';
-            }else{
-                activeClassName='';
+            } else {
+                activeClassName = '';
             }
 
             images.push({
-                e:'a',
-                h: banners[i].url,
+                e: 'a',
+                h: banners[i].url != null ? banners[i].url : '',
                 c: 'image' + activeClassName,
                 n: 'img',
                 a: {style: 'background-image: url(' + fin.settings.controlsDescriptors.site.contentImagesPath + banners[i].imageSrc + ')'}
@@ -36,10 +36,12 @@
         }
 
 
-        return {c:'images-container',n: 'slider',C: [
-            images,
-            tmpls.imageControls()
-        ]}
+        return {
+            c: 'images-container', n: 'slider', C: [
+                images,
+                tmpls.imageControls()
+            ]
+        }
     }
 
 }(FIN));
