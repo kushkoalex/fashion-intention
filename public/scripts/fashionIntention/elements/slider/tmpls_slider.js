@@ -26,13 +26,22 @@
                 activeClassName = '';
             }
 
-            images.push({
-                e: 'a',
-                h: banners[i].url != null ? banners[i].url : '',
-                c: 'image' + activeClassName,
-                n: 'img',
-                a: {style: 'background-image: url(' + fin.settings.controlsDescriptors.site.contentImagesPath + banners[i].imageSrc + ')'}
-            });
+            if (banners[i].url == null || banners[i].url == '') {
+                images.push({
+                    c: 'image' + activeClassName,
+                    n: 'img',
+                    a: {style: 'background-image: url(' + fin.settings.controlsDescriptors.site.contentImagesPath + banners[i].imageSrc + ')'}
+                });
+            }
+            else {
+                images.push({
+                    e: 'a',
+                    h: banners[i].url,
+                    c: 'image' + activeClassName,
+                    n: 'img',
+                    a: {style: 'background-image: url(' + fin.settings.controlsDescriptors.site.contentImagesPath + banners[i].imageSrc + ')'}
+                });
+            }
         }
 
 

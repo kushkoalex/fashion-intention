@@ -8,20 +8,30 @@
     tmpls.postDetails = function (post) {
 
         var postItems = [],
-            imagePath = fin.settings.controlsDescriptors.site.contentImagesPath;
+            imagePath = fin.settings.controlsDescriptors.site.contentImagesPath,
+            content;
 
         a9.each(post.items, function (postItem) {
+
+
+            if (postItem.text == null || postItem.text == '') {
+                content = [
+                    {c: 'text', H: postItem.text}
+                ]
+            } else {
+                content = [
+                    {c: 'pattern'},
+                    {c: 'text', H: postItem.text},
+                    {c: 'pattern'}
+                ]
+            }
+
             postItems.push({
                 c: 'post-item', C: [
                     {c: 'image', e: 'img', a: {src: imagePath + postItem.imageSrc}},
                     {
-                        c: 'text-wrapper', C: [
-                        {c: 'pattern'},
-                        {c: 'text', H: postItem.text},
-                        {c: 'pattern'}
-                    ]
+                        c: 'text-wrapper', C: content
                     },
-
                     {c: 'clear'}
                 ]
             });
@@ -38,7 +48,7 @@
             tmpls.header(),
             {
                 c: 'main-image-content-container', C: [
-                {c: 'main-image-content', n:'sliderContainer', C:tmpls.slider()},
+                {c: 'main-image-content', n: 'sliderContainer', C: tmpls.slider()},
                 tmpls.postMenu(),
                 tmpls.mainMenu()
             ]
@@ -61,7 +71,7 @@
                             c: 'tags-wrapper', C: [
                                 {c: 'tags-title', t: 'Тэги:'},
                                 {c: 'tags', C: tags},
-                                {c:'clear'}
+                                {c: 'clear'}
                             ]
                         }
                     }
