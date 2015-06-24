@@ -50,6 +50,11 @@
     float: right;
 
 }
+.post-item .image.centered {
+    float: none;
+}
+
+
 .post-item .video{
     width: 556px;
     float: right;

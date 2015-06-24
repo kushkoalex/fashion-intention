@@ -15,26 +15,29 @@
 
 
             if (postItem.text == null || postItem.text == '') {
-                content = [
-                    {c: 'text', H: postItem.text}
-                ]
+                content={
+                    c: 'post-item', C: [
+                        {c: 'image centered', e: 'img', a: {src: imagePath + postItem.imageSrc}},
+                        {c: 'clear'}
+                    ]
+                }
             } else {
-                content = [
-                    {c: 'pattern'},
-                    {c: 'text', H: postItem.text},
-                    {c: 'pattern'}
-                ]
+                content={
+                    c: 'post-item', C: [
+                        {c: 'image', e: 'img', a: {src: imagePath + postItem.imageSrc}},
+                        {
+                            c: 'text-wrapper', C: [
+                            {c: 'pattern'},
+                            {c: 'text', H: postItem.text},
+                            {c: 'pattern'}
+                        ]
+                        },
+                        {c: 'clear'}
+                    ]
+                }
             }
 
-            postItems.push({
-                c: 'post-item', C: [
-                    {c: 'image', e: 'img', a: {src: imagePath + postItem.imageSrc}},
-                    {
-                        c: 'text-wrapper', C: content
-                    },
-                    {c: 'clear'}
-                ]
-            });
+            postItems.push(content);
         });
 
 
